@@ -1,0 +1,35 @@
+<!--pages/result/result.wxml-->
+<view class="container">
+  <view class="grid-title">拼豆图纸 (可缩放和拖动)</view>
+  <movable-area class="movable-area" scale-area>
+    <movable-view class="movable-view" direction="all" scale="true" scale-min="0.3" scale-max="8" scale-value="{{scale}}" out-of-bounds="true">
+      <view class="pixel-grid">
+        <view wx:for="{{pixelGrid}}" wx:for-item="row" wx:for-index="rowIndex" wx:key="rowIndex" class="pixel-row">
+          <view wx:for="{{row}}" wx:for-item="cell" wx:for-index="colIndex" wx:key="colIndex" class="pixel-cell" style="background-color: {{cell.color}};">
+            <text class="pixel-code">{{cell.code}}</text>
+          </view>
+        </view>
+      </view>
+    </movable-view>
+  </movable-area>
+
+  <!-- Zoom Controls -->
+  <view class="zoom-controls">
+    <view class="zoom-btn" bindtap="zoomIn">+</view>
+    <view class="zoom-btn" bindtap="zoomOut">-</view>
+  </view>
+
+  <view class="color-list-container">
+    <view class="list-title">材料清单</view>
+    <view class="color-list">
+      <view wx:for="{{colorList}}" wx:key="code" class="color-item">
+        <view class="color-box" style="background-color: {{item.color}};"></view>
+        <text class="color-info">{{item.name}} ({{item.code}}) - 数量: {{item.count}}</text>
+      </view>
+    </view>
+  </view>
+  <button type="primary" bindtap="download">保存高清图纸</button>
+  <canvas type="2d" id="analysisCanvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px; position: absolute; left: -10000px; top: -10000px;"></canvas>
+  <!-- Hidden canvas for exporting high-resolution image -->
+  <canvas type="2d" id="exportCanvas" style="width: {{exportCanvasWidth}}px; height: {{exportCanvasHeight}}px; position: absolute; left: -10000px; top: -10000px;"></canvas>
+</view>

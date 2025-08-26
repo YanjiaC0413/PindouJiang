@@ -1,0 +1,16 @@
+<!--pages/editor/editor.wxml-->
+<view class="container">
+  <!-- Visible canvas for displaying the pixelated result -->
+  <canvas type="2d" id="pixelCanvas" style="width:{{canvasWidth}}px; height:{{canvasHeight}}px; border: 1px solid #ccc;"></canvas>
+  
+  <view class="control-panel">
+    <view class="slider-container">
+      <text>精度</text>
+      <slider class="pixel-slider" min="5" max="50" value="{{pixelSize}}" bindchange="onSliderChange" show-value/>
+    </view>
+    <button type="primary" bindtap="generate" disabled="{{!isImageLoaded}}">{{isImageLoaded ? '生成图纸' : '图片处理中...'}}</button>
+  </view>
+
+  <!-- Hidden canvas for reading source image data. It's moved off-screen. -->
+  <canvas type="2d" id="sourceCanvas" style="width: {{sourceCanvasWidth}}px; height: {{sourceCanvasHeight}}px; position: absolute; left: -10000px; top: -10000px;"></canvas>
+</view>

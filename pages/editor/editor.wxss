@@ -1,0 +1,55 @@
+/* pages/editor/editor.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+}
+
+canvas {
+  margin-bottom: 40rpx;
+}
+
+.control-panel {
+  width: 100%;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.slider-container text {
+  margin-right: 20rpx;
+}
+
+.pixel-slider {
+  flex: 1;
+}
+
+.picker-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+  justify-content: space-between;
+}
+
+.picker-container text {
+  margin-right: 20rpx;
+}
+
+.picker {
+  border: 1px solid #ccc;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  width: 200rpx;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+button {
+  background-color: #ff5722;
+  color: white;
+}

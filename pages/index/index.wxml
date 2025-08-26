@@ -1,0 +1,8 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="title">像素拼豆酱</view>
+  <view class="uploader">
+    <button type="primary" class="upload-btn pixel-btn" bindtap="uploadImage">上传图片</button>
+    <view class="tip-text">选择一张图片，将其转换为拼豆图纸</view>
+  </view>
+</view>

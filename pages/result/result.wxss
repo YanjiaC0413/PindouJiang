@@ -1,0 +1,135 @@
+/* pages/result/result.wxss */
+.container {
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.grid-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  text-align: center;
+  color: #333;
+  flex-shrink: 0; /* Prevent title from shrinking */
+}
+
+.movable-area {
+  width: 100%;
+  flex: 1; /* Make it fill available vertical space */
+  min-height: 0; /* Crucial for flexbox sizing */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  overflow: hidden; /* Clip the content that overflows the area */
+}
+
+.movable-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Let the size be determined by its content (.pixel-grid) */
+}
+
+.pixel-grid {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+.pixel-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.pixel-cell {
+  width: 60rpx; /* Adjust for initial view */
+  height: 60rpx; /* Adjust for initial view */
+  box-sizing: border-box;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pixel-code {
+  font-size: 16rpx; /* Small font, will be readable on zoom */
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.color-list-container {
+  margin-top: 20rpx; /* Reduced margin */
+  flex-shrink: 0;
+}
+
+.list-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  text-transform: capitalize;
+}
+
+.color-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 20vh; /* Adjust max height */
+  overflow-y: auto;
+  border: 1px solid #eee;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+
+.color-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+  flex-shrink: 0;
+}
+
+.color-box {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+  border: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.color-info {
+  font-size: 28rpx;
+}
+
+button {
+  margin-top: 20rpx;
+  background-color: #ff5722;
+  color: white;
+  flex-shrink: 0;
+}
+
+.zoom-controls {
+  position: absolute;
+  right: 30rpx;
+  bottom: 220rpx; /* Adjust position to avoid overlapping the download button */
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.zoom-btn {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
